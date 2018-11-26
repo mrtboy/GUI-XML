@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GUI_XML
 {
-    public partial class Form1 : Form
+    public partial class DataManagementView : Form
     {
-        public Form1()
+        public DataManagementView()
         {
             InitializeComponent();
         }
