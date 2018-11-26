@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
+    [Serializable]
     public class Person
     {
         private String SurName { get; set; }
@@ -17,7 +18,7 @@ namespace GUI_XML
         public enum genderType { male, female };
         public enum eyeColorType { gray, brown, blue, green };
 
-        public Class1()
+        public Person(String SurName,String GivenName,String Height,GenderType Gender,eyeColorType eyeColor)
         {
            
         }

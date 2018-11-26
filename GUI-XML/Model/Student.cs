@@ -13,7 +13,8 @@ namespace GUI_XML
     {
         private String MatriculationNumber { get; set; }
         private int CreditPoints { get; set; }
-        public Student()
+
+        public Student(String MatriculationNumber, int CreditPoints):base(SurName, GivenName, Height,  Gender, eyeColor)
         {
         }
     }
