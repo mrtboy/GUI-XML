@@ -14,7 +14,7 @@ namespace GUI_XML
         private String EmployeeNumber { get; set; }
         private int Salary { get; set; }
 
-        public Employee(String EmployeeNumber,int Salary):base(SurName, GivenName, Height, Gender, eyeColor)
+        public Employee(String SurName, String GivenName, String Height, genderType Gender, eyeColorType eyeColor,String EmployeeNumber,int Salary):base(SurName, GivenName, Height, Gender, eyeColor)
         {
         }
     }

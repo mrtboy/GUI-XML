@@ -18,7 +18,7 @@ namespace GUI_XML
         public enum genderType { male, female };
         public enum eyeColorType { gray, brown, blue, green };
 
-        public Person(String SurName,String GivenName,String Height,GenderType Gender,eyeColorType eyeColor)
+        public Person(String SurName,String GivenName,String Height,genderType Gender,eyeColorType eyeColor)
         {
            
         }
