@@ -9,13 +9,23 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
+    [Serializable]
     public class Employee : Person
     {
-        private String EmployeeNumber { get; set; }
-        private int Salary { get; set; }
+        public String EmployeeNumber { get; set; }
+        public double Salary { get; set; }
 
-        public Employee(String SurName, String GivenName, String Height, genderType Gender, eyeColorType eyeColor,String EmployeeNumber,int Salary):base(SurName, GivenName, Height, Gender, eyeColor)
+        public Employee()
         {
+
+        }
+
+        public Employee(String SurName, String GivenName, String Height,
+            genderType Gender, eyeColorType eyeColor,String EmployeeNumber,double Salary)
+            :base(SurName, GivenName, Height, Gender, eyeColor)
+        {
+            this.EmployeeNumber = EmployeeNumber;
+            this.Salary = Salary;
         }
     }
 }

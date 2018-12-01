@@ -9,18 +9,30 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
+
+    public enum genderType { MALE, FEMALE };
+    public enum eyeColorType { GRAY, BROWN, BLUE, GREEN};
+
     [Serializable]
     public class Person
     {
-        private String SurName { get; set; }
-        private String GivenName { get; set; }
-        private String Height { get; set; }
-        public enum genderType { male, female };
-        public enum eyeColorType { gray, brown, blue, green };
-
-        public Person(String SurName,String GivenName,String Height,genderType Gender,eyeColorType eyeColor)
+        public String Surname { get; set; }
+        public String GivenName { get; set; }
+        public String Height { get; set; }
+        public eyeColorType EyeColor{ get; set; }
+        public genderType Gender { get; set; }
+        public Person(String Surname,String GivenName,String Height,genderType Gender,eyeColorType eyeColor)
         {
-           
+            this.Surname = Surname;
+            this.GivenName = GivenName;
+            this.Height = Height;
+            this.Gender = Gender;
+            this.EyeColor = eyeColor;
+        }
+
+        public Person()
+        {
+
         }
     }
 }

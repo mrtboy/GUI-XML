@@ -9,13 +9,18 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
+    [Serializable]
     public class Student:Person
     {
-        private String MatriculationNumber { get; set; }
-        private int CreditPoints { get; set; }
-
-        public Student(String SurName, String GivenName, String Height, genderType Gender, eyeColorType eyeColor,String MatriculationNumber, int CreditPoints):base(SurName, GivenName, Height,  Gender, eyeColor)
+        public String MatriculationNumber { get; set; }
+        public int CreditPoints { get; set; }
+        public Student() { }
+        public Student(String SurName, String GivenName, String Height, genderType Gender,
+            eyeColorType eyeColor,String MatriculationNumber, int CreditPoints)
+            :base(SurName, GivenName, Height,  Gender, eyeColor)
         {
+            this.MatriculationNumber = MatriculationNumber;
+            this.CreditPoints = CreditPoints;
         }
     }
 }

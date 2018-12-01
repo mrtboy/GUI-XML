@@ -28,18 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelForm = new System.Windows.Forms.Panel();
             this.btnNext = new System.Windows.Forms.Button();
             this.btnPrevious = new System.Windows.Forms.Button();
             this.cbEyeColor = new System.Windows.Forms.ComboBox();
             this.cbGender = new System.Windows.Forms.ComboBox();
             this.lblSalary = new System.Windows.Forms.Label();
             this.lblCreditPoint = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEmployeeNumber = new System.Windows.Forms.TextBox();
+            this.txtMatriculation = new System.Windows.Forms.TextBox();
+            this.txtHeight = new System.Windows.Forms.TextBox();
+            this.txtFamilyName = new System.Windows.Forms.TextBox();
+            this.txtSurname = new System.Windows.Forms.TextBox();
             this.lblType = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -51,46 +51,46 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnLoadXml = new System.Windows.Forms.Button();
+            this.btnXmlSave = new System.Windows.Forms.Button();
+            this.btnLoadBinary = new System.Windows.Forms.Button();
+            this.btnPromoteEmployee = new System.Windows.Forms.Button();
+            this.btnPromoteStudent = new System.Windows.Forms.Button();
             this.btnSaveBinary = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelForm.SuspendLayout();
+            this.panelButtons.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelForm
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.panel1.Controls.Add(this.btnNext);
-            this.panel1.Controls.Add(this.btnPrevious);
-            this.panel1.Controls.Add(this.cbEyeColor);
-            this.panel1.Controls.Add(this.cbGender);
-            this.panel1.Controls.Add(this.lblSalary);
-            this.panel1.Controls.Add(this.lblCreditPoint);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.lblType);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 454);
-            this.panel1.TabIndex = 0;
+            this.panelForm.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panelForm.Controls.Add(this.btnNext);
+            this.panelForm.Controls.Add(this.btnPrevious);
+            this.panelForm.Controls.Add(this.cbEyeColor);
+            this.panelForm.Controls.Add(this.cbGender);
+            this.panelForm.Controls.Add(this.lblSalary);
+            this.panelForm.Controls.Add(this.lblCreditPoint);
+            this.panelForm.Controls.Add(this.txtEmployeeNumber);
+            this.panelForm.Controls.Add(this.txtMatriculation);
+            this.panelForm.Controls.Add(this.txtHeight);
+            this.panelForm.Controls.Add(this.txtFamilyName);
+            this.panelForm.Controls.Add(this.txtSurname);
+            this.panelForm.Controls.Add(this.lblType);
+            this.panelForm.Controls.Add(this.label10);
+            this.panelForm.Controls.Add(this.label9);
+            this.panelForm.Controls.Add(this.label8);
+            this.panelForm.Controls.Add(this.label7);
+            this.panelForm.Controls.Add(this.label6);
+            this.panelForm.Controls.Add(this.label5);
+            this.panelForm.Controls.Add(this.label4);
+            this.panelForm.Controls.Add(this.label3);
+            this.panelForm.Controls.Add(this.label2);
+            this.panelForm.Controls.Add(this.label1);
+            this.panelForm.Location = new System.Drawing.Point(12, 12);
+            this.panelForm.Name = "panelForm";
+            this.panelForm.Size = new System.Drawing.Size(576, 454);
+            this.panelForm.TabIndex = 0;
             // 
             // btnNext
             // 
@@ -103,6 +103,7 @@
             this.btnNext.TabIndex = 23;
             this.btnNext.Text = ">";
             this.btnNext.UseVisualStyleBackColor = false;
+            this.btnNext.Click += new System.EventHandler(this.btnNext_Click);
             // 
             // btnPrevious
             // 
@@ -115,6 +116,7 @@
             this.btnPrevious.TabIndex = 22;
             this.btnPrevious.Text = "<";
             this.btnPrevious.UseVisualStyleBackColor = false;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
             // 
             // cbEyeColor
             // 
@@ -123,7 +125,7 @@
             this.cbEyeColor.Location = new System.Drawing.Point(213, 234);
             this.cbEyeColor.Name = "cbEyeColor";
             this.cbEyeColor.Size = new System.Drawing.Size(251, 32);
-            this.cbEyeColor.TabIndex = 21;
+            this.cbEyeColor.TabIndex = 15;
             // 
             // cbGender
             // 
@@ -132,7 +134,7 @@
             this.cbGender.Location = new System.Drawing.Point(213, 189);
             this.cbGender.Name = "cbGender";
             this.cbGender.Size = new System.Drawing.Size(251, 32);
-            this.cbGender.TabIndex = 20;
+            this.cbGender.TabIndex = 14;
             // 
             // lblSalary
             // 
@@ -152,45 +154,45 @@
             this.lblCreditPoint.Size = new System.Drawing.Size(0, 24);
             this.lblCreditPoint.TabIndex = 18;
             // 
-            // textBox7
+            // txtEmployeeNumber
             // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(213, 367);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(251, 29);
-            this.textBox7.TabIndex = 17;
+            this.txtEmployeeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmployeeNumber.Location = new System.Drawing.Point(213, 367);
+            this.txtEmployeeNumber.Name = "txtEmployeeNumber";
+            this.txtEmployeeNumber.Size = new System.Drawing.Size(251, 29);
+            this.txtEmployeeNumber.TabIndex = 17;
             // 
-            // textBox5
+            // txtMatriculation
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(213, 284);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 29);
-            this.textBox5.TabIndex = 15;
+            this.txtMatriculation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMatriculation.Location = new System.Drawing.Point(213, 284);
+            this.txtMatriculation.Name = "txtMatriculation";
+            this.txtMatriculation.Size = new System.Drawing.Size(251, 29);
+            this.txtMatriculation.TabIndex = 16;
             // 
-            // textBox3
+            // txtHeight
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(213, 136);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(251, 29);
-            this.textBox3.TabIndex = 13;
+            this.txtHeight.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtHeight.Location = new System.Drawing.Point(213, 136);
+            this.txtHeight.Name = "txtHeight";
+            this.txtHeight.Size = new System.Drawing.Size(251, 29);
+            this.txtHeight.TabIndex = 13;
             // 
-            // textBox2
+            // txtFamilyName
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(213, 87);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(251, 29);
-            this.textBox2.TabIndex = 12;
+            this.txtFamilyName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFamilyName.Location = new System.Drawing.Point(213, 87);
+            this.txtFamilyName.Name = "txtFamilyName";
+            this.txtFamilyName.Size = new System.Drawing.Size(251, 29);
+            this.txtFamilyName.TabIndex = 12;
             // 
-            // textBox1
+            // txtSurname
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(213, 52);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 29);
-            this.textBox1.TabIndex = 11;
+            this.txtSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSurname.Location = new System.Drawing.Point(213, 52);
+            this.txtSurname.Name = "txtSurname";
+            this.txtSurname.Size = new System.Drawing.Size(251, 29);
+            this.txtSurname.TabIndex = 11;
             // 
             // lblType
             // 
@@ -301,82 +303,85 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Type";
             // 
-            // panel2
+            // panelButtons
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.button6);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.btnSaveBinary);
-            this.panel2.Location = new System.Drawing.Point(594, 12);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(286, 454);
-            this.panel2.TabIndex = 1;
+            this.panelButtons.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelButtons.Controls.Add(this.btnLoadXml);
+            this.panelButtons.Controls.Add(this.btnXmlSave);
+            this.panelButtons.Controls.Add(this.btnLoadBinary);
+            this.panelButtons.Controls.Add(this.btnPromoteEmployee);
+            this.panelButtons.Controls.Add(this.btnPromoteStudent);
+            this.panelButtons.Controls.Add(this.btnSaveBinary);
+            this.panelButtons.Location = new System.Drawing.Point(594, 12);
+            this.panelButtons.Name = "panelButtons";
+            this.panelButtons.Size = new System.Drawing.Size(286, 454);
+            this.panelButtons.TabIndex = 1;
             // 
-            // button3
+            // btnLoadXml
             // 
-            this.button3.BackColor = System.Drawing.Color.Blue;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(148, 66);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(135, 38);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Save XML";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnLoadXml.BackColor = System.Drawing.Color.Blue;
+            this.btnLoadXml.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadXml.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadXml.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLoadXml.Location = new System.Drawing.Point(148, 66);
+            this.btnLoadXml.Name = "btnLoadXml";
+            this.btnLoadXml.Size = new System.Drawing.Size(135, 38);
+            this.btnLoadXml.TabIndex = 8;
+            this.btnLoadXml.Text = "Load XML";
+            this.btnLoadXml.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnXmlSave
             // 
-            this.button2.BackColor = System.Drawing.Color.Blue;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button2.Location = new System.Drawing.Point(3, 66);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(139, 38);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Save XML";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnXmlSave.BackColor = System.Drawing.Color.Blue;
+            this.btnXmlSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnXmlSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXmlSave.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnXmlSave.Location = new System.Drawing.Point(3, 66);
+            this.btnXmlSave.Name = "btnXmlSave";
+            this.btnXmlSave.Size = new System.Drawing.Size(139, 38);
+            this.btnXmlSave.TabIndex = 7;
+            this.btnXmlSave.Text = "Save XML";
+            this.btnXmlSave.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnLoadBinary
             // 
-            this.button1.BackColor = System.Drawing.Color.Blue;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button1.Location = new System.Drawing.Point(148, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 38);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Load binary";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnLoadBinary.BackColor = System.Drawing.Color.Blue;
+            this.btnLoadBinary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadBinary.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadBinary.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnLoadBinary.Location = new System.Drawing.Point(148, 22);
+            this.btnLoadBinary.Name = "btnLoadBinary";
+            this.btnLoadBinary.Size = new System.Drawing.Size(135, 38);
+            this.btnLoadBinary.TabIndex = 6;
+            this.btnLoadBinary.Text = "Load binary";
+            this.btnLoadBinary.UseVisualStyleBackColor = false;
+            this.btnLoadBinary.Click += new System.EventHandler(this.btnLoadBinary_Click);
             // 
-            // button6
+            // btnPromoteEmployee
             // 
-            this.button6.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button6.Location = new System.Drawing.Point(3, 185);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(280, 38);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Promote to Employee";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnPromoteEmployee.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPromoteEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromoteEmployee.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPromoteEmployee.Location = new System.Drawing.Point(3, 185);
+            this.btnPromoteEmployee.Name = "btnPromoteEmployee";
+            this.btnPromoteEmployee.Size = new System.Drawing.Size(280, 38);
+            this.btnPromoteEmployee.TabIndex = 5;
+            this.btnPromoteEmployee.Text = "Promote to Employee";
+            this.btnPromoteEmployee.UseVisualStyleBackColor = false;
+            this.btnPromoteEmployee.Click += new System.EventHandler(this.btnPromoteEmployee_Click);
             // 
-            // button5
+            // btnPromoteStudent
             // 
-            this.button5.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button5.Location = new System.Drawing.Point(3, 132);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(280, 38);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "Promote to Student";
-            this.button5.UseVisualStyleBackColor = false;
+            this.btnPromoteStudent.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnPromoteStudent.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPromoteStudent.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnPromoteStudent.Location = new System.Drawing.Point(3, 132);
+            this.btnPromoteStudent.Name = "btnPromoteStudent";
+            this.btnPromoteStudent.Size = new System.Drawing.Size(280, 38);
+            this.btnPromoteStudent.TabIndex = 4;
+            this.btnPromoteStudent.Text = "Promote to Student";
+            this.btnPromoteStudent.UseVisualStyleBackColor = false;
+            this.btnPromoteStudent.Click += new System.EventHandler(this.btnPromoteStudent_Click);
             // 
             // btnSaveBinary
             // 
@@ -390,6 +395,7 @@
             this.btnSaveBinary.TabIndex = 0;
             this.btnSaveBinary.Text = "Save binary";
             this.btnSaveBinary.UseVisualStyleBackColor = false;
+            this.btnSaveBinary.Click += new System.EventHandler(this.btnSaveBinary_Click);
             // 
             // DataManagementView
             // 
@@ -397,31 +403,31 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(892, 478);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelButtons);
+            this.Controls.Add(this.panelForm);
             this.Name = "DataManagementView";
             this.Text = "DataManagementView";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.panelForm.ResumeLayout(false);
+            this.panelForm.PerformLayout();
+            this.panelButtons.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelForm;
         private System.Windows.Forms.Button btnNext;
         private System.Windows.Forms.Button btnPrevious;
         private System.Windows.Forms.ComboBox cbEyeColor;
         private System.Windows.Forms.ComboBox cbGender;
         private System.Windows.Forms.Label lblSalary;
         private System.Windows.Forms.Label lblCreditPoint;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEmployeeNumber;
+        private System.Windows.Forms.TextBox txtMatriculation;
+        private System.Windows.Forms.TextBox txtHeight;
+        private System.Windows.Forms.TextBox txtFamilyName;
+        private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
@@ -433,12 +439,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panelButtons;
+        private System.Windows.Forms.Button btnLoadXml;
+        private System.Windows.Forms.Button btnXmlSave;
+        private System.Windows.Forms.Button btnLoadBinary;
+        private System.Windows.Forms.Button btnPromoteEmployee;
+        private System.Windows.Forms.Button btnPromoteStudent;
         private System.Windows.Forms.Button btnSaveBinary;
     }
 }
