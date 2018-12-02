@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace GUI_XML
 {
@@ -14,6 +15,9 @@ namespace GUI_XML
     public enum eyeColorType { GRAY, BROWN, BLUE, GREEN};
 
     [Serializable]
+    [XmlInclude(typeof(Person))]
+    [XmlInclude(typeof(Student))]
+    [XmlInclude(typeof(Employee))]
     public class Person
     {
         public String Surname { get; set; }

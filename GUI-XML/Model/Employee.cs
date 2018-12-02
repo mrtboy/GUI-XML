@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
-    [Serializable]
+   
     public class Employee : Person
     {
         public String EmployeeNumber { get; set; }

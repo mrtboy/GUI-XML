@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GUI_XML
 {
-    [Serializable]
+   
     public class Student:Person
     {
         public String MatriculationNumber { get; set; }

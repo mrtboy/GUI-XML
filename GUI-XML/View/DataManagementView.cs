@@ -10,6 +10,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 
 namespace GUI_XML
 {
@@ -179,6 +180,35 @@ namespace GUI_XML
                 lblCreditPoint.Text = "";
                 people[index] = readTheForm();
             }
+            fillForm();
+        }
+
+        private void btnXmlSave_Click(object sender, EventArgs e)
+        {
+            updateThePerson();
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.InitialDirectory = Application.StartupPath;
+            saveFileDialog.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                FileStream fileStream = new FileStream(saveFileDialog.FileName, FileMode.Create);
+                XmlSerializer mser = new XmlSerializer(typeof(List<Person>));
+                mser.Serialize(fileStream, people);
+                fileStream.Close();
+            }
+        }
+
+        private void btnLoadXml_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                Stream openFileStream = File.OpenRead(openFileDialog.FileName);
+                XmlSerializer deserializer = new XmlSerializer(typeof(List<Person>));
+                people = (List<Person>)deserializer.Deserialize(openFileStream);
+                openFileStream.Close();
+            }
+            resetTheForm();
             fillForm();
         }
     }
