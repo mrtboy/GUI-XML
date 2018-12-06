@@ -24,6 +24,7 @@ namespace GUI_XML
             InitializeComponent();
             fillDropDowns();
             refreshGuiData();
+            btnSaveNewPerson.Visible = false;
         }
 
         private void fillDropDowns()
@@ -75,6 +76,8 @@ namespace GUI_XML
 
         private void btnNext_Click(object sender, EventArgs e)
         {
+            btnSaveNewPerson.Visible = false;
+            btnCreateNewPerson.Visible = true;
             if (people.Count -1 > index)
             {
                 index++;
@@ -84,6 +87,8 @@ namespace GUI_XML
 
         private void btnPrevious_Click(object sender, EventArgs e)
         {
+            btnSaveNewPerson.Visible = false;
+            btnCreateNewPerson.Visible = true;
             if(0 < index)
             {
                 index--;
@@ -210,6 +215,53 @@ namespace GUI_XML
             }
             resetTheForm();
             fillForm();
+        }
+
+
+        private void btnCreateNewPerson_Click(object sender, EventArgs e)
+        {
+            resetTheForm();
+            btnSaveNewPerson.Visible = true;
+            btnCreateNewPerson.Visible = false;
+        }
+
+        private void btnSaveNewPerson_Click(object sender, EventArgs e)
+        {
+            if(txtFamilyName.Text == "" || txtSurname.Text == "" || txtMatriculation.Text == "" ||
+                txtEmployeeNumber.Text == "")
+            {
+                MessageBox.Show("Please fill the form completery");
+                return;
+            }
+            people.Add(readTheForm());
+            btnSaveNewPerson.Visible = false;
+            btnCreateNewPerson.Visible = true;
+            if(people.Count > 0)
+            {
+                btnDeleteUser.Enabled = true;
+            }
+        }
+
+        private void btnDeleteUser_Click(object sender, EventArgs e)
+        {
+            if(people.Count != 0)
+            {
+                people.Remove(people[index]);
+                resetTheForm();
+                if (people.Count == index)
+                {
+                    btnPrevious_Click(sender, e);
+                }
+                else
+                {
+                    btnNext_Click(sender, e);
+                }
+            } else
+            {
+                btnSaveNewPerson.Visible = true;
+                btnCreateNewPerson.Visible = false;
+                btnDeleteUser.Enabled = false;
+            }
         }
     }
 }
