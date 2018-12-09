@@ -52,6 +52,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnCreateNewPerson = new System.Windows.Forms.Button();
             this.btnSaveNewPerson = new System.Windows.Forms.Button();
             this.btnLoadXml = new System.Windows.Forms.Button();
@@ -60,7 +61,6 @@
             this.btnPromoteEmployee = new System.Windows.Forms.Button();
             this.btnPromoteStudent = new System.Windows.Forms.Button();
             this.btnSaveBinary = new System.Windows.Forms.Button();
-            this.btnDeleteUser = new System.Windows.Forms.Button();
             this.panelForm.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.SuspendLayout();
@@ -94,6 +94,7 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(576, 454);
             this.panelForm.TabIndex = 0;
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // btnNext
             // 
@@ -323,6 +324,20 @@
             this.panelButtons.Size = new System.Drawing.Size(286, 454);
             this.panelButtons.TabIndex = 1;
             // 
+            // btnDeleteUser
+            // 
+            this.btnDeleteUser.BackColor = System.Drawing.Color.Red;
+            this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnDeleteUser.Location = new System.Drawing.Point(148, 248);
+            this.btnDeleteUser.Name = "btnDeleteUser";
+            this.btnDeleteUser.Size = new System.Drawing.Size(100, 50);
+            this.btnDeleteUser.TabIndex = 11;
+            this.btnDeleteUser.Text = "Delete";
+            this.btnDeleteUser.UseVisualStyleBackColor = false;
+            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
+            // 
             // btnCreateNewPerson
             // 
             this.btnCreateNewPerson.BackColor = System.Drawing.Color.Blue;
@@ -433,20 +448,6 @@
             this.btnSaveBinary.UseVisualStyleBackColor = false;
             this.btnSaveBinary.Click += new System.EventHandler(this.btnSaveBinary_Click);
             // 
-            // btnDeleteUser
-            // 
-            this.btnDeleteUser.BackColor = System.Drawing.Color.Red;
-            this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteUser.Location = new System.Drawing.Point(148, 248);
-            this.btnDeleteUser.Name = "btnDeleteUser";
-            this.btnDeleteUser.Size = new System.Drawing.Size(100, 50);
-            this.btnDeleteUser.TabIndex = 11;
-            this.btnDeleteUser.Text = "Delete";
-            this.btnDeleteUser.UseVisualStyleBackColor = false;
-            this.btnDeleteUser.Click += new System.EventHandler(this.btnDeleteUser_Click);
-            // 
             // DataManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,6 +457,7 @@
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.panelForm);
             this.Name = "DataManagementView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DataManagementView";
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();

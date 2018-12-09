@@ -65,10 +65,17 @@ namespace GUI_XML
                 txtEmployeeNumber.Text = "";
                 lblSalary.Text = "";
             }
-            if (people[index] is Employee e)
+            else if (people[index] is Employee e)
             {
                 txtEmployeeNumber.Text = e.EmployeeNumber;
                 lblSalary.Text = e.Salary.ToString();
+                txtMatriculation.Text = "";
+                lblCreditPoint.Text = "";
+            }
+            else
+            {
+                txtEmployeeNumber.Text = "";
+                lblSalary.Text = "";
                 txtMatriculation.Text = "";
                 lblCreditPoint.Text = "";
             }
@@ -78,9 +85,10 @@ namespace GUI_XML
         {
             btnSaveNewPerson.Visible = false;
             btnCreateNewPerson.Visible = true;
-            people[index] = readTheForm();
+            
             if (people.Count -1 > index)
             {
+                people[index] = readTheForm();
                 index++;
                 fillForm();
             }
@@ -90,9 +98,10 @@ namespace GUI_XML
         {
             btnSaveNewPerson.Visible = false;
             btnCreateNewPerson.Visible = true;
-            people[index] = readTheForm();
+            
             if (0 < index)
             {
+                people[index] = readTheForm();
                 index--;
                 fillForm();
             }
@@ -132,7 +141,7 @@ namespace GUI_XML
             string surename = txtSurname.Text;
             string givenname = txtFamilyName.Text;
             string height = txtHeight.Text;
-            genderType gender = (genderType)cbGender.SelectedItem;
+            genderType genderType = (genderType)cbGender.SelectedItem;
             eyeColorType eyeColorType = (eyeColorType)cbEyeColor.SelectedItem;
 
             Person person;
@@ -140,13 +149,16 @@ namespace GUI_XML
             {
                 string employeeNumber = txtEmployeeNumber.Text;
                 double salary = lblSalary.Text != "" ? Convert.ToDouble(lblSalary.Text) : 0;
-                return person = new Employee(surename,givenname,height, gender, eyeColorType, employeeNumber, salary);
-            } else
+                return person = new Employee(surename,givenname,height, genderType, eyeColorType, employeeNumber, salary);
+            } else if(txtMatriculation.Text != "")
             {
                 string matriculationNumber = txtMatriculation.Text != "" ? txtMatriculation.Text : "";
                 int creditPoints = lblCreditPoint.Text != "" ? Convert.ToInt32(lblCreditPoint.Text) : 0;
-                return person = new Student(surename,givenname, height, gender, eyeColorType, matriculationNumber, creditPoints);
-            }
+                return person = new Student(surename,givenname, height, genderType, eyeColorType, matriculationNumber, creditPoints);
+            } else
+            {
+                return person = new Person(surename, givenname, height, genderType, eyeColorType);
+            } 
         }
 
         private void updateThePerson()
@@ -229,8 +241,7 @@ namespace GUI_XML
 
         private void btnSaveNewPerson_Click(object sender, EventArgs e)
         {
-            if(txtFamilyName.Text == "" || txtSurname.Text == "" || txtMatriculation.Text == "" ||
-                txtEmployeeNumber.Text == "")
+            if(txtFamilyName.Text == "" || txtSurname.Text == "")
             {
                 MessageBox.Show("Please fill the form completery");
                 return;
@@ -246,24 +257,23 @@ namespace GUI_XML
 
         private void btnDeleteUser_Click(object sender, EventArgs e)
         {
-            if(people.Count != 0)
-            {
-                people.Remove(people[index]);
-                resetTheForm();
-                if (people.Count == index)
-                {
-                    btnPrevious_Click(sender, e);
-                }
-                else
-                {
-                    btnNext_Click(sender, e);
-                }
-            } else
-            {
+            people.Remove(people[index]);
+            resetTheForm();
+   
+            if(people.Count == 0) {
                 btnSaveNewPerson.Visible = true;
                 btnCreateNewPerson.Visible = false;
                 btnDeleteUser.Enabled = false;
-            }
+            } else
+            {
+                fillForm();
+            } 
+           
+        }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
