@@ -78,6 +78,7 @@ namespace GUI_XML
         {
             btnSaveNewPerson.Visible = false;
             btnCreateNewPerson.Visible = true;
+            people[index] = readTheForm();
             if (people.Count -1 > index)
             {
                 index++;
@@ -89,7 +90,8 @@ namespace GUI_XML
         {
             btnSaveNewPerson.Visible = false;
             btnCreateNewPerson.Visible = true;
-            if(0 < index)
+            people[index] = readTheForm();
+            if (0 < index)
             {
                 index--;
                 fillForm();
