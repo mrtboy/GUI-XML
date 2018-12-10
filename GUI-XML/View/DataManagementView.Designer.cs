@@ -61,8 +61,22 @@
             this.btnPromoteEmployee = new System.Windows.Forms.Button();
             this.btnPromoteStudent = new System.Windows.Forms.Button();
             this.btnSaveBinary = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTallestPerson = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.lblHeightAverage = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.lblCountOfBrownEyes = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.lblCountOfWoman = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblCountOfMale = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btnSortByGivenName = new System.Windows.Forms.Button();
+            this.btnSortBySurName = new System.Windows.Forms.Button();
             this.panelForm.SuspendLayout();
             this.panelButtons.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelForm
@@ -310,6 +324,8 @@
             // panelButtons
             // 
             this.panelButtons.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelButtons.Controls.Add(this.btnSortByGivenName);
+            this.panelButtons.Controls.Add(this.btnSortBySurName);
             this.panelButtons.Controls.Add(this.btnDeleteUser);
             this.panelButtons.Controls.Add(this.btnCreateNewPerson);
             this.panelButtons.Controls.Add(this.btnSaveNewPerson);
@@ -330,7 +346,7 @@
             this.btnDeleteUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeleteUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnDeleteUser.Location = new System.Drawing.Point(148, 248);
+            this.btnDeleteUser.Location = new System.Drawing.Point(173, 367);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(100, 50);
             this.btnDeleteUser.TabIndex = 11;
@@ -344,7 +360,7 @@
             this.btnCreateNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCreateNewPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateNewPerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCreateNewPerson.Location = new System.Drawing.Point(17, 248);
+            this.btnCreateNewPerson.Location = new System.Drawing.Point(42, 367);
             this.btnCreateNewPerson.Name = "btnCreateNewPerson";
             this.btnCreateNewPerson.Size = new System.Drawing.Size(100, 50);
             this.btnCreateNewPerson.TabIndex = 10;
@@ -358,7 +374,7 @@
             this.btnSaveNewPerson.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveNewPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSaveNewPerson.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSaveNewPerson.Location = new System.Drawing.Point(17, 248);
+            this.btnSaveNewPerson.Location = new System.Drawing.Point(42, 367);
             this.btnSaveNewPerson.Name = "btnSaveNewPerson";
             this.btnSaveNewPerson.Size = new System.Drawing.Size(100, 50);
             this.btnSaveNewPerson.TabIndex = 9;
@@ -448,12 +464,152 @@
             this.btnSaveBinary.UseVisualStyleBackColor = false;
             this.btnSaveBinary.Click += new System.EventHandler(this.btnSaveBinary_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblTallestPerson);
+            this.panel1.Controls.Add(this.label16);
+            this.panel1.Controls.Add(this.lblHeightAverage);
+            this.panel1.Controls.Add(this.label14);
+            this.panel1.Controls.Add(this.lblCountOfBrownEyes);
+            this.panel1.Controls.Add(this.label13);
+            this.panel1.Controls.Add(this.lblCountOfWoman);
+            this.panel1.Controls.Add(this.label12);
+            this.panel1.Controls.Add(this.lblCountOfMale);
+            this.panel1.Controls.Add(this.label11);
+            this.panel1.Location = new System.Drawing.Point(12, 472);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(576, 191);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // lblTallestPerson
+            // 
+            this.lblTallestPerson.AutoSize = true;
+            this.lblTallestPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTallestPerson.Location = new System.Drawing.Point(176, 126);
+            this.lblTallestPerson.Name = "lblTallestPerson";
+            this.lblTallestPerson.Size = new System.Drawing.Size(0, 16);
+            this.lblTallestPerson.TabIndex = 9;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(19, 126);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(95, 16);
+            this.label16.TabIndex = 8;
+            this.label16.Text = "Tallest Person";
+            // 
+            // lblHeightAverage
+            // 
+            this.lblHeightAverage.AutoSize = true;
+            this.lblHeightAverage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHeightAverage.Location = new System.Drawing.Point(176, 98);
+            this.lblHeightAverage.Name = "lblHeightAverage";
+            this.lblHeightAverage.Size = new System.Drawing.Size(0, 16);
+            this.lblHeightAverage.TabIndex = 7;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(19, 98);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(104, 16);
+            this.label14.TabIndex = 6;
+            this.label14.Text = "Height average:";
+            // 
+            // lblCountOfBrownEyes
+            // 
+            this.lblCountOfBrownEyes.AutoSize = true;
+            this.lblCountOfBrownEyes.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountOfBrownEyes.Location = new System.Drawing.Point(174, 67);
+            this.lblCountOfBrownEyes.Name = "lblCountOfBrownEyes";
+            this.lblCountOfBrownEyes.Size = new System.Drawing.Size(0, 16);
+            this.lblCountOfBrownEyes.TabIndex = 5;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(19, 67);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(133, 16);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Count of Brown Eyes:";
+            // 
+            // lblCountOfWoman
+            // 
+            this.lblCountOfWoman.AutoSize = true;
+            this.lblCountOfWoman.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountOfWoman.Location = new System.Drawing.Point(143, 40);
+            this.lblCountOfWoman.Name = "lblCountOfWoman";
+            this.lblCountOfWoman.Size = new System.Drawing.Size(0, 16);
+            this.lblCountOfWoman.TabIndex = 3;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(19, 40);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(105, 16);
+            this.label12.TabIndex = 2;
+            this.label12.Text = "Count of woman:";
+            // 
+            // lblCountOfMale
+            // 
+            this.lblCountOfMale.AutoSize = true;
+            this.lblCountOfMale.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountOfMale.Location = new System.Drawing.Point(143, 17);
+            this.lblCountOfMale.Name = "lblCountOfMale";
+            this.lblCountOfMale.Size = new System.Drawing.Size(0, 16);
+            this.lblCountOfMale.TabIndex = 1;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(19, 17);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(99, 16);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Count of males:";
+            // 
+            // btnSortByGivenName
+            // 
+            this.btnSortByGivenName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSortByGivenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByGivenName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSortByGivenName.Location = new System.Drawing.Point(3, 296);
+            this.btnSortByGivenName.Name = "btnSortByGivenName";
+            this.btnSortByGivenName.Size = new System.Drawing.Size(280, 38);
+            this.btnSortByGivenName.TabIndex = 13;
+            this.btnSortByGivenName.Text = "Sort by Given Name";
+            this.btnSortByGivenName.UseVisualStyleBackColor = false;
+            this.btnSortByGivenName.Click += new System.EventHandler(this.btnSortByGivenName_Click);
+            // 
+            // btnSortBySurName
+            // 
+            this.btnSortBySurName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSortBySurName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortBySurName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSortBySurName.Location = new System.Drawing.Point(3, 243);
+            this.btnSortBySurName.Name = "btnSortBySurName";
+            this.btnSortBySurName.Size = new System.Drawing.Size(280, 38);
+            this.btnSortBySurName.TabIndex = 12;
+            this.btnSortBySurName.Text = "Sort by SurName";
+            this.btnSortBySurName.UseVisualStyleBackColor = false;
+            this.btnSortBySurName.Click += new System.EventHandler(this.btnSortBySurName_Click);
+            // 
             // DataManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(892, 478);
+            this.ClientSize = new System.Drawing.Size(927, 675);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.panelForm);
             this.Name = "DataManagementView";
@@ -462,6 +618,8 @@
             this.panelForm.ResumeLayout(false);
             this.panelForm.PerformLayout();
             this.panelButtons.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -501,6 +659,19 @@
         private System.Windows.Forms.Button btnSaveNewPerson;
         private System.Windows.Forms.Button btnCreateNewPerson;
         private System.Windows.Forms.Button btnDeleteUser;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblCountOfWoman;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblCountOfMale;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblCountOfBrownEyes;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblHeightAverage;
+        private System.Windows.Forms.Label lblTallestPerson;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnSortByGivenName;
+        private System.Windows.Forms.Button btnSortBySurName;
     }
 }
 

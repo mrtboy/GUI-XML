@@ -25,6 +25,7 @@ namespace GUI_XML
             fillDropDowns();
             refreshGuiData();
             btnSaveNewPerson.Visible = false;
+            groupPerson();
         }
 
         private void fillDropDowns()
@@ -79,6 +80,7 @@ namespace GUI_XML
                 txtMatriculation.Text = "";
                 lblCreditPoint.Text = "";
             }
+            groupPerson();
         }
 
         private void btnNext_Click(object sender, EventArgs e)
@@ -274,6 +276,33 @@ namespace GUI_XML
         private void panelForm_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void groupPerson()
+        {
+            lblCountOfMale.Text = people.FindAll(p => (p.Gender == genderType.male)).Count.ToString();
+            lblCountOfWoman.Text = people.FindAll(p => (p.Gender == genderType.female)).Count.ToString();
+            lblCountOfBrownEyes.Text = people.FindAll(p => (p.EyeColor == eyeColorType.brown)).Count.ToString();
+            lblHeightAverage.Text = people.Select(p =>Convert.ToDouble(p.Height)).Average().ToString();
+            lblTallestPerson.Text = people.Max(p => Convert.ToDouble(p.Height)).ToString();
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnSortBySurName_Click(object sender, EventArgs e)
+        {
+            people = people.OrderBy(p => p.SurName).ToList();
+            fillForm();
+        }
+
+        private void btnSortByGivenName_Click(object sender, EventArgs e)
+        {
+            people = people.OrderBy(p => p.GivenName).ToList();
+            fillForm();
         }
     }
 }
