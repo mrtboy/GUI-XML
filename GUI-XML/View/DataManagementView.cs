@@ -35,11 +35,11 @@ namespace GUI_XML
 
         private void refreshGuiData()
         {
-            Employee emp = new Employee("Reza","Taleghani","173",genderType.MALE,eyeColorType.BLUE, "1233442", 1000);
-            Employee emp1 = new Employee("Mohammadre", "Taleghani", "173", genderType.MALE, eyeColorType.BROWN, "1233442", 1000);
-            Employee emp2 = new Employee("Maryam", "Eghbali", "180", genderType.FEMALE, eyeColorType.BROWN, "1233442", 2000);
-            Student stu = new Student("Sara", "Eghbali", "180", genderType.FEMALE, eyeColorType.GRAY, "4324324",5);
-            Student stu2 = new Student("Ali", "Eghbali", "180", genderType.FEMALE, eyeColorType.GREEN, "23213", 33);
+            Employee emp = new Employee("Reza","Taleghani","173",genderType.male,eyeColorType.blue, "1233442", 1000);
+            Employee emp1 = new Employee("Mohammadre", "Taleghani", "173", genderType.male, eyeColorType.brown, "1233442", 1000);
+            Employee emp2 = new Employee("Maryam", "Eghbali", "180", genderType.female, eyeColorType.brown, "1233442", 2000);
+            Student stu = new Student("Sara", "Eghbali", "180", genderType.female, eyeColorType.gray, "4324324",5);
+            Student stu2 = new Student("Ali", "Eghbali", "180", genderType.female, eyeColorType.green, "23213", 33);
 
             people.Add(emp);
             people.Add(emp1);
@@ -52,7 +52,7 @@ namespace GUI_XML
         private void fillForm()
         {
             lblType.Text = people[index].ToString();
-            txtSurname.Text = people[index].Surname;
+            txtSurname.Text = people[index].SurName;
             txtFamilyName.Text = people[index].GivenName;
             txtHeight.Text = people[index].Height;
             cbGender.SelectedItem = people[index].Gender;
