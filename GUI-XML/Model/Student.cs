@@ -15,7 +15,7 @@ namespace GUI_XML
         public String MatriculationNumber { get; set; }
         public int CreditPoints { get; set; }
         public Student() { }
-        public Student(String SurName, String GivenName, String Height, genderType Gender,
+        public Student(String SurName, String GivenName, double Height, genderType Gender,
             eyeColorType eyeColor,String MatriculationNumber, int CreditPoints)
             :base(SurName, GivenName, Height,  Gender, eyeColor)
         {

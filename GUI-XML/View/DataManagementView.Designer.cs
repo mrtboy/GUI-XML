@@ -52,6 +52,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelButtons = new System.Windows.Forms.Panel();
+            this.btnSortByGivenName = new System.Windows.Forms.Button();
+            this.btnSortBySurName = new System.Windows.Forms.Button();
             this.btnDeleteUser = new System.Windows.Forms.Button();
             this.btnCreateNewPerson = new System.Windows.Forms.Button();
             this.btnSaveNewPerson = new System.Windows.Forms.Button();
@@ -72,11 +74,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.lblCountOfMale = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.btnSortByGivenName = new System.Windows.Forms.Button();
-            this.btnSortBySurName = new System.Windows.Forms.Button();
+            this.btnFilter = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelForm.SuspendLayout();
             this.panelButtons.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelForm
@@ -340,6 +343,32 @@
             this.panelButtons.Size = new System.Drawing.Size(286, 454);
             this.panelButtons.TabIndex = 1;
             // 
+            // btnSortByGivenName
+            // 
+            this.btnSortByGivenName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSortByGivenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortByGivenName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSortByGivenName.Location = new System.Drawing.Point(3, 296);
+            this.btnSortByGivenName.Name = "btnSortByGivenName";
+            this.btnSortByGivenName.Size = new System.Drawing.Size(280, 38);
+            this.btnSortByGivenName.TabIndex = 13;
+            this.btnSortByGivenName.Text = "Sort by Given Name";
+            this.btnSortByGivenName.UseVisualStyleBackColor = false;
+            this.btnSortByGivenName.Click += new System.EventHandler(this.btnSortByGivenName_Click);
+            // 
+            // btnSortBySurName
+            // 
+            this.btnSortBySurName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSortBySurName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSortBySurName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btnSortBySurName.Location = new System.Drawing.Point(3, 243);
+            this.btnSortBySurName.Name = "btnSortBySurName";
+            this.btnSortBySurName.Size = new System.Drawing.Size(280, 38);
+            this.btnSortBySurName.TabIndex = 12;
+            this.btnSortBySurName.Text = "Sort by SurName";
+            this.btnSortBySurName.UseVisualStyleBackColor = false;
+            this.btnSortBySurName.Click += new System.EventHandler(this.btnSortBySurName_Click);
+            // 
             // btnDeleteUser
             // 
             this.btnDeleteUser.BackColor = System.Drawing.Color.Red;
@@ -478,7 +507,7 @@
             this.panel1.Controls.Add(this.label11);
             this.panel1.Location = new System.Drawing.Point(12, 472);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 191);
+            this.panel1.Size = new System.Drawing.Size(576, 161);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -577,38 +606,36 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Count of males:";
             // 
-            // btnSortByGivenName
+            // btnFilter
             // 
-            this.btnSortByGivenName.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSortByGivenName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortByGivenName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSortByGivenName.Location = new System.Drawing.Point(3, 296);
-            this.btnSortByGivenName.Name = "btnSortByGivenName";
-            this.btnSortByGivenName.Size = new System.Drawing.Size(280, 38);
-            this.btnSortByGivenName.TabIndex = 13;
-            this.btnSortByGivenName.Text = "Sort by Given Name";
-            this.btnSortByGivenName.UseVisualStyleBackColor = false;
-            this.btnSortByGivenName.Click += new System.EventHandler(this.btnSortByGivenName_Click);
+            this.btnFilter.BackColor = System.Drawing.Color.Blue;
+            this.btnFilter.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFilter.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnFilter.Location = new System.Drawing.Point(597, 639);
+            this.btnFilter.Name = "btnFilter";
+            this.btnFilter.Size = new System.Drawing.Size(110, 38);
+            this.btnFilter.TabIndex = 11;
+            this.btnFilter.Text = "Filter";
+            this.btnFilter.UseVisualStyleBackColor = false;
+            this.btnFilter.Click += new System.EventHandler(this.btnFilter_Click);
             // 
-            // btnSortBySurName
+            // dataGridView1
             // 
-            this.btnSortBySurName.BackColor = System.Drawing.Color.CornflowerBlue;
-            this.btnSortBySurName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSortBySurName.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSortBySurName.Location = new System.Drawing.Point(3, 243);
-            this.btnSortBySurName.Name = "btnSortBySurName";
-            this.btnSortBySurName.Size = new System.Drawing.Size(280, 38);
-            this.btnSortBySurName.TabIndex = 12;
-            this.btnSortBySurName.Text = "Sort by SurName";
-            this.btnSortBySurName.UseVisualStyleBackColor = false;
-            this.btnSortBySurName.Click += new System.EventHandler(this.btnSortBySurName_Click);
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 639);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(576, 171);
+            this.dataGridView1.TabIndex = 13;
             // 
             // DataManagementView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(927, 675);
+            this.ClientSize = new System.Drawing.Size(919, 822);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.btnFilter);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelButtons);
             this.Controls.Add(this.panelForm);
@@ -620,6 +647,7 @@
             this.panelButtons.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -672,6 +700,8 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnSortByGivenName;
         private System.Windows.Forms.Button btnSortBySurName;
+        private System.Windows.Forms.Button btnFilter;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
 

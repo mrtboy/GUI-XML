@@ -22,10 +22,10 @@ namespace GUI_XML
     {
         public String SurName { get; set; }
         public String GivenName { get; set; }
-        public String Height { get; set; }
+        public double Height { get; set; }
         public eyeColorType EyeColor{ get; set; }
         public genderType Gender { get; set; }
-        public Person(String Surname,String GivenName,String Height,genderType Gender,eyeColorType eyeColor)
+        public Person(String Surname,String GivenName, double Height,genderType Gender,eyeColorType eyeColor)
         {
             this.SurName = Surname;
             this.GivenName = GivenName;

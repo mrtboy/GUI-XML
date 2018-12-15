@@ -20,7 +20,7 @@ namespace GUI_XML
 
         }
 
-        public Employee(String SurName, String GivenName, String Height,
+        public Employee(String SurName, String GivenName, double Height,
             genderType Gender, eyeColorType eyeColor,String EmployeeNumber,double Salary)
             :base(SurName, GivenName, Height, Gender, eyeColor)
         {

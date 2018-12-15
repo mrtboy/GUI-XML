@@ -36,11 +36,11 @@ namespace GUI_XML
 
         private void refreshGuiData()
         {
-            Employee emp = new Employee("Reza","Taleghani","173",genderType.male,eyeColorType.blue, "1233442", 1000);
-            Employee emp1 = new Employee("Mohammadre", "Taleghani", "173", genderType.male, eyeColorType.brown, "1233442", 1000);
-            Employee emp2 = new Employee("Maryam", "Eghbali", "180", genderType.female, eyeColorType.brown, "1233442", 2000);
-            Student stu = new Student("Sara", "Eghbali", "180", genderType.female, eyeColorType.gray, "4324324",5);
-            Student stu2 = new Student("Ali", "Eghbali", "180", genderType.female, eyeColorType.green, "23213", 33);
+            Employee emp = new Employee("Reza","Taleghani",173,genderType.male,eyeColorType.blue, "1233442", 1000);
+            Employee emp1 = new Employee("Mohammadre", "Taleghani", 173, genderType.male, eyeColorType.brown, "1233442", 1000);
+            Employee emp2 = new Employee("Maryam", "Eghbali", 180, genderType.female, eyeColorType.brown, "1233442", 2000);
+            Student stu = new Student("Sara", "Eghbali", 180, genderType.female, eyeColorType.gray, "4324324",5);
+            Student stu2 = new Student("Ali", "Eghbali", 180, genderType.female, eyeColorType.green, "23213", 33);
 
             people.Add(emp);
             people.Add(emp1);
@@ -55,7 +55,7 @@ namespace GUI_XML
             lblType.Text = people[index].ToString();
             txtSurname.Text = people[index].SurName;
             txtFamilyName.Text = people[index].GivenName;
-            txtHeight.Text = people[index].Height;
+            txtHeight.Text = people[index].Height.ToString();
             cbGender.SelectedItem = people[index].Gender;
             cbEyeColor.SelectedItem = people[index].EyeColor;
 
@@ -142,7 +142,7 @@ namespace GUI_XML
         {
             string surename = txtSurname.Text;
             string givenname = txtFamilyName.Text;
-            string height = txtHeight.Text;
+            double height = Convert.ToDouble(txtHeight.Text);
             genderType genderType = (genderType)cbGender.SelectedItem;
             eyeColorType eyeColorType = (eyeColorType)cbEyeColor.SelectedItem;
 
@@ -283,8 +283,8 @@ namespace GUI_XML
             lblCountOfMale.Text = people.FindAll(p => (p.Gender == genderType.male)).Count.ToString();
             lblCountOfWoman.Text = people.FindAll(p => (p.Gender == genderType.female)).Count.ToString();
             lblCountOfBrownEyes.Text = people.FindAll(p => (p.EyeColor == eyeColorType.brown)).Count.ToString();
-            lblHeightAverage.Text = people.Select(p =>Convert.ToDouble(p.Height)).Average().ToString();
-            lblTallestPerson.Text = people.Max(p => Convert.ToDouble(p.Height)).ToString();
+            lblHeightAverage.Text = people.Select(p =>p.Height).Average().ToString();
+            lblTallestPerson.Text = people.Max(p => p.Height).ToString();
 
         }
 
@@ -303,6 +303,13 @@ namespace GUI_XML
         {
             people = people.OrderBy(p => p.GivenName).ToList();
             fillForm();
+        }
+
+        private void btnFilter_Click(object sender, EventArgs e)
+        {
+            List<Person> person= people.FindAll(p => (p.Height >= 1.7 && p.Height <= 1.71)).ToList();
+            dataGridView1.DataSource = person;
+            
         }
     }
 }
